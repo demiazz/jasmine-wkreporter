@@ -4,22 +4,22 @@
 <head>
   <title>Jasmine WebKit Reporter</title>
 
-  <link rel="shortcut icon" type="image/png" href="/vendor/img/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="vendor/img/favicon.png">
 
   <!-- Jasmine CSS -->
-  <link rel="stylesheet" type="text/css" href="/vendor/css/jasmine.css">
+  <link rel="stylesheet" type="text/css" href="vendor/css/jasmine.css">
   <!-- Jasmine BDD Framework -->
-  <script type="text/javascript" src="/vendor/js/jasmine.js"></script>
-  <script type="text/javascript" src="/vendor/js/jasmine-html.js"></script>
+  <script type="text/javascript" src="vendor/js/jasmine.js"></script>
+  <script type="text/javascript" src="vendor/js/jasmine-html.js"></script>
   <!-- Jasmine Sinon -->
-  <script type="text/javascript" src="/vendor/js/sinon.js"></script>
-  <script type="text/javascript" src="/vendor/js/jasmine-sinon.js"></script>
+  <script type="text/javascript" src="vendor/js/sinon.js"></script>
+  <script type="text/javascript" src="vendor/js/jasmine-sinon.js"></script>
 
   <!-- Source -->
-  <script type="text/javascript" src="/jasmine-wkreporter.js"></script>
+  <script type="text/javascript" src="jasmine-wkreporter.js"></script>
 
   <!-- Specs -->
-  <script type="text/javascript" src="/jasmine-wkreporter.spec.js"></script>
+  <script type="text/javascript" src="jasmine-wkreporter.spec.js"></script>
 
   <script type="text/javascript">
     (function() {
@@ -36,7 +36,7 @@
 
       var currentWindowOnload = window.onload;
 
-      document.onready = function() {
+      window.onload = function() {
         if (currentWindowOnload) {
           currentWindowOnload();
         }
