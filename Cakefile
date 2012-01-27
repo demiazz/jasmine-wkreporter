@@ -39,8 +39,17 @@ runServer = (config) ->
         return response.end fs.readFileSync(config.index)
       # for other files
       else
-        response.writeHead 200
-        return response.end fs.readFileSync(".#{url_path}")
+        if url_path.match(/.*\.(html|js|css)/g)
+          if url_path.match(/.*\.html$/g)
+            response.writeHead 200, "Content-Type": "text/html"
+          if url_path.match(/.*\.js$/g)
+            response.writeHead 200, "Content-Type": "text/javascript"
+          if url_path.match(/.*\.css$/g)
+            response.writeHead 200, "Content-Type": "text/css"
+          return response.end fs.readFileSync "./#{url_path}", "utf-8"
+        else
+          response.writeHead 200
+          return response.end fs.readFileSync "./#{url_path}"
     # 404 for error, when try find a file
     catch error
       response.writeHead 404
