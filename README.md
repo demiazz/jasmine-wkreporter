@@ -48,3 +48,27 @@ This is simple example of usage. :
 
 When specs are running, will be used TrivialReporter (default for Jasmine), and
 WebkitReporter.
+
+## Options
+
+WebKit Reporter have custom options:
+  * title - name of testing application;
+  * replaceId - custom replaceId for notifications (see Notifications API Draft);
+  * timeout - of timeout is greater such 0, then notifications will be autoclosed after timeout;
+  * passedIcon - icon for notifications about passed running;
+  * failedIcon - icon for notifications about failed running;
+  * runningIcon - icon for notifications about running.
+
+### Notes about icons
+
+Icons will be a URL or empty string for not showning icons.
+
+If you want enable icon, then recommend set as URL to icon.
+
+## Browsers without webkitNotifications
+
+If browser have not window.webkitNotifications, when reporter creating methods
+`reportRunnerStarting` and `reportRunnerResults` replaced by empty methods.
+
+This is make possible using library in non supported browsers without exceptions,
+and any actions for disabling of reporter.

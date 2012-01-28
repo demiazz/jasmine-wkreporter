@@ -91,16 +91,21 @@
 
     function WebkitReporter(options) {
       if (options == null) options = {};
-      if (options) {
-        if (options.title) this.title = options.title;
-        if (options.replaceId) this.replaceId = options.replaceId;
-        if (options.timeout) this.timeout = options.timeout;
-        if (options.passedIcon) this.passedIcon = options.passedIcon;
-        if (options.failedIcon) this.failedIcon = options.failedIcon;
-        if (options.runningIcon) this.runningIcon = options.runningIcon;
+      if (jasmine.getGlobal().webkitNotifications) {
+        if (options) {
+          if (options.title) this.title = options.title;
+          if (options.replaceId) this.replaceId = options.replaceId;
+          if (options.timeout) this.timeout = options.timeout;
+          if (options.passedIcon) this.passedIcon = options.passedIcon;
+          if (options.failedIcon) this.failedIcon = options.failedIcon;
+          if (options.runningIcon) this.runningIcon = options.runningIcon;
+        }
+        this.startedAt = null;
+        this.finishedAt = null;
+      } else {
+        this.reportRunnerStarting = function() {};
+        this.reportRunnerResults = function() {};
       }
-      this.startedAt = null;
-      this.finishedAt = null;
       return;
     }
 

@@ -75,15 +75,20 @@ class jasmine.WebkitReporter extends jasmine.Reporter
     @param {Object|null} options - options for reporter
   ###
   constructor: (options = {}) ->
-    if options
-      @title = options.title              if options.title
-      @replaceId = options.replaceId      if options.replaceId
-      @timeout = options.timeout          if options.timeout
-      @passedIcon = options.passedIcon    if options.passedIcon
-      @failedIcon = options.failedIcon    if options.failedIcon
-      @runningIcon = options.runningIcon  if options.runningIcon
-    @startedAt =  null
-    @finishedAt = null
+    if jasmine.getGlobal().webkitNotifications
+      if options
+        @title = options.title              if options.title
+        @replaceId = options.replaceId      if options.replaceId
+        @timeout = options.timeout          if options.timeout
+        @passedIcon = options.passedIcon    if options.passedIcon
+        @failedIcon = options.failedIcon    if options.failedIcon
+        @runningIcon = options.runningIcon  if options.runningIcon
+      @startedAt =  null
+      @finishedAt = null
+    else
+      # safe stubing functions for reporting by empty methods
+      @reportRunnerStarting = () ->
+      @reportRunnerResults = () ->
     return
 
   ###
