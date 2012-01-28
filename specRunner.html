@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Jasmine WebKit Reporter</title>
+
+  <link rel="shortcut icon" type="image/png" href="vendor/img/favicon.png">
+
+  <!-- Jasmine CSS -->
+  <link rel="stylesheet" type="text/css" href="vendor/css/jasmine.css">
+  <!-- Jasmine BDD Framework -->
+  <script type="text/javascript" src="vendor/js/jasmine.js"></script>
+  <script type="text/javascript" src="vendor/js/jasmine-html.js"></script>
+  <!-- Jasmine Sinon -->
+  <script type="text/javascript" src="vendor/js/sinon.js"></script>
+  <script type="text/javascript" src="vendor/js/jasmine-sinon.js"></script>
+
+  <!-- Source -->
+  <script type="text/javascript" src="jasmine-wkreporter.js"></script>
+
+  <!-- Specs -->
+  <script type="text/javascript" src="jasmine-wkreporter.spec.js"></script>
+
+  <script type="text/javascript">
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var trivialReporter = new jasmine.TrivialReporter();
+
+      jasmineEnv.addReporter(trivialReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return trivialReporter.specFilter(spec);
+      };
+
+      var currentWindowOnload = window.onload;
+
+      window.onload = function() {
+        if (currentWindowOnload) {
+          currentWindowOnload();
+        }
+        execJasmine();
+      };
+
+      function execJasmine() {
+        jasmineEnv.execute();
+      }
+
+    })();
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>
