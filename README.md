@@ -49,7 +49,7 @@ This is simple example of usage :
 When specs are running, will be used TrivialReporter (default for Jasmine), and
 WebkitReporter.
 
-## Options
+# Options
 
 WebKit Reporter have custom options:
   * title - name of testing application;
@@ -61,7 +61,7 @@ WebKit Reporter have custom options:
 
 Icons must be a URL or empty string.
 
-## Browsers without webkitNotifications
+# Browsers without webkitNotifications
 
 If browser have not `window.webkitNotifications`, when reporter creating methods
 `reportRunnerStarting` and `reportRunnerResults` replaced by empty methods.
