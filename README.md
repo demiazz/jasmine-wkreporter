@@ -53,6 +53,7 @@ WebkitReporter.
 ## Options
 
 WebKit Reporter have custom options:
+
   * title - name of testing application;
   * replaceId - custom replaceId for notifications (see Notifications API Draft);
   * timeout - of timeout is greater such 0, then notifications will be autoclosed after timeout;
