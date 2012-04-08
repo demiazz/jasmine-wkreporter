@@ -54,12 +54,12 @@ WebkitReporter.
 
 WebKit Reporter have custom options:
 
-  * title - name of testing application;
-  * replaceId - custom replaceId for notifications (see Notifications API Draft);
-  * timeout - of timeout is greater such 0, then notifications will be autoclosed after timeout;
-  * passedIcon - icon for notifications about passed running;
-  * failedIcon - icon for notifications about failed running;
-  * runningIcon - icon for notifications about running.
+  * `title` - name of testing application;
+  * `replaceId` - custom replaceId for notifications (see Notifications API Draft);
+  * `timeout` - of timeout is greater such 0, then notifications will be autoclosed after timeout;
+  * `passedIcon` - icon for notifications about passed running;
+  * `failedIcon` - icon for notifications about failed running;
+  * `runningIcon` - icon for notifications about running.
 
 Icons must be a URL or empty string.
 
