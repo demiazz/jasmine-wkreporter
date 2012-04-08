@@ -8,12 +8,12 @@ Need permission for use notifications for work this reporter.
 
 ## Installation
 
-Install this reporter is very simple task. Only enable script after Jasmine in
+Installation this reporter is very simple task. Only enable script after Jasmine in
 SpecRunner.
 
 ## Usage
 
-This is simple example of usage. :
+This is simple example of usage :
 
 ``` javascript
 
@@ -59,16 +59,12 @@ WebKit Reporter have custom options:
   * failedIcon - icon for notifications about failed running;
   * runningIcon - icon for notifications about running.
 
-### Notes about icons
-
-Icons will be a URL or empty string for not showning icons.
-
-If you want enable icon, then recommend set as URL to icon.
+Icons must be a URL or empty string.
 
 ## Browsers without webkitNotifications
 
-If browser have not window.webkitNotifications, when reporter creating methods
+If browser have not `window.webkitNotifications`, when reporter creating methods
 `reportRunnerStarting` and `reportRunnerResults` replaced by empty methods.
 
-This is make possible using library in non supported browsers without exceptions,
+This is make possible using library in non-supported browsers without exceptions,
 and any actions for disabling of reporter.
